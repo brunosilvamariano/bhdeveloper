@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+    <head>
+        <!-- Metadados essenciais -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Cardápio online da HB Developers – Peça combos, burgers, porções e mais com facilidade.">
+        <meta name="author" content="HB Developers">
+        <meta name="theme-color" content="#3b3e37">
+
+        <!-- Pré-conexão para Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Título da página -->
+        <title>HB Developers | Cardápio Online</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="assets/img/logo-temp.png" type="image/png">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- CSS personalizado -->
+        <link rel="stylesheet" href="style/style.css">
+        
+        <!-- Comentário: Adicione aqui outros estilos extras se necessário -->
+      
+      
+    </head>
+      
+    <body>
+      <!-- 
+        Cabeçalho Principal do Site
+        - Contém a logomarca da empresa e o botão para abrir o menu lateral (offcanvas).
+        - Utiliza estrutura semântica e acessível.
+        -->
+        <header id="header-principal" class="shadow-sm">
+            <div class="container d-flex justify-content-between align-items-center py-3">
+                
+                <!-- 
+                    Logomarca da Empresa:
+                    - Envolvida por um link que retorna à seção inicial da página.
+                    - Imagem responsiva com descrição acessível.
+                -->
+                <div id="logo-header">
+                    <a href="#home" aria-label="Voltar para a seção inicial da página">
+                        <img 
+                            src="assets/img/logo/logo.svg" 
+                            alt="Logotipo da HB Developers" 
+                            class="img-fluid" 
+                            id="logo-imagem" 
+                            width="150"
+                        >
+                    </a>
+                </div>
+
+                <!-- 
+                    Área de Interação:
+                    - Contém botão para abrir o menu lateral (offcanvas).
+                    - Ícone do tipo "hambúrguer" representando o menu.
+                -->
+                <nav aria-label="Menu de navegação principal">
+                    <button 
+                        class="btn me-3" 
+                        id="menu-toggle" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#offcanvasMenu" 
+                        aria-controls="offcanvasMenu" 
+                        aria-label="Abrir menu de navegação"
+                    >
+                        <img 
+                            src="assets/img/icons/toggle-menu.svg" 
+                            alt="Ícone do menu" 
+                            class="icone-menu" 
+                            width="50" 
+                            height="40"
+                        >
+                    </button>
+                </nav>
+
+            </div>
+        </header>
+       <!-- 
+            Menu Offcanvas (Menu Lateral de Navegação):
+            - Utilizado principalmente em dispositivos móveis.
+            - Contém links de navegação para as seções do site.
+            - Estrutura acessível e semanticamente organizada.
+        -->
+        <aside 
+        class="offcanvas offcanvas-start" 
+        tabindex="-1" 
+        id="offcanvasMenu" 
+        aria-labelledby="offcanvasMenuLabel"
+        role="navigation"
+        >
+        <!-- 
+            Cabeçalho do Menu Offcanvas:
+            - Contém espaço reservado para logotipo ou imagem.
+            - Inclui botão de fechar o menu com acessibilidade.
+        -->
+        <div class="offcanvas-header">
+            <!-- Espaço reservado para o logo ou elemento gráfico -->
+            <div class="img-fluid py-4" style="width: 150px;"></div>
+
+            <!-- Botão de Fechar o Menu (acessível) -->
+            <button 
+                type="button" 
+                class="btn-close" 
+                data-bs-dismiss="offcanvas" 
+                aria-label="Fechar menu"
+            ></button>
+        </div>
+
+        <!-- 
+            Corpo do Menu Offcanvas:
+            - Navegação principal do site.
+            - Lista de links e submenu com categorias.
+        -->
+        <div class="offcanvas-body">
+            <nav aria-label="Navegação principal do site">
+                <ul class="list-unstyled">
+
+                    <!-- Link para a seção Home -->
+                    <li>
+                        <a 
+                            href="#home" 
+                            class="d-flex align-items-center py-2 px-3 rounded-3 home-hover"
+                            aria-label="Ir para a seção inicial (Home)"
+                        >
+                            <i class="bi bi-house-door me-2" aria-hidden="true"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <!-- Link com submenu: Menu de Categorias -->
+                    <li>
+                        <div class="dropdown">
+                            <a 
+                                href="#" 
+                                class="dropdown-toggle d-flex align-items-center py-2 px-3 rounded-3 cat-hover" 
+                                id="dropdownCategories" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                aria-label="Abrir menu de categorias"
+                            >
+                                <i class="bi bi-list me-2" aria-hidden="true"></i>
+                                <span>Menu</span>
+                            </a>
+
+                            <!-- Lista de Subcategorias (dropdown) -->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
+                                <li><a href="#sobre" class="dropdown-item">Sobre</a></li>
+                                <li><a href="#projetos" class="dropdown-item">Projetos</a></li>
+                                <li><a href="#servicos" class="dropdown-item">Serviços</a></li>
+                                <li><a href="#blog" class="dropdown-item">Blog</a></li>
+                                <li><a href="#contato" class="dropdown-item">Contato</a></li>
+                                <li><a href="#testemunhos" class="dropdown-item">Testemunhos</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        </aside>
+
+        <main class="home">
+            <!-- Seção Hero estilizada com fundo de imagem e botões personalizados -->
+            <section class="hero-home d-flex align-items-center justify-content-center text-center">
+                <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                    <!-- Título principal com efeito de digitação -->
+                    <h1 class="hero-txt display-4 fw-bold mb-4">
+                        Somos a <span id="typewriter" class="marca"></span>
+                    </h1>
+                    
+                    <!-- Descrição -->
+                    <p class="hero-p lead mb-4">
+                        Desenvolvemos experiências digitais modernas e funcionais com foco em resultados.
+                    </p>
+                    
+                    <!-- Botões personalizados com ícones -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="#projetos" class="btn-custom btn-primary-custom">
+                        <i class="bi bi-box-arrow-up-right me-2"></i> Ver Projetos
+                        </a>
+                        <a href="#sobre" class="btn-custom btn-outline-custom">
+                        <i class="bi bi-person-circle me-2"></i> Quem Somos
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <!-- Seção de frases rotativas com ícones e animação deslizante -->
+            <section class="frases-slide py-4">
+                <div class="container">
+                <div class="frase-wrapper d-flex justify-content-center align-items-center overflow-hidden">
+                    <i id="icone-frase" class="bi bi-lightbulb-fill me-3 fs-4"></i>
+                    <span id="frase-slide" class="fs-5 fw-semibold frase-texto"></span>
+                </div>
+                </div>
+            </section>
+            <!-- Seção de Serviços -->
+            <section class="servicos py-5">
+                <div class="container">
+                <div class="row justify-content-center g-4">
+                    
+                    <!-- Serviço 1 -->
+                    <div class="col-md-6 col-lg-4">
+                    <div class="servico-box text-center p-4">
+                        <i class="bi bi-code-slash icon-servico mb-3"></i>
+                        <h3 class="fs-5 mb-2">Desenvolvimento Web</h3>
+                        <p class="mb-0">Sites modernos, rápidos e responsivos com as melhores práticas.</p>
+                    </div>
+                    </div>
+            
+                    <!-- Serviço 2 -->
+                    <div class="col-md-6 col-lg-4">
+                    <div class="servico-box text-center p-4">
+                        <i class="bi bi-phone icon-servico mb-3"></i>
+                        <h3 class="fs-5 mb-2">Design Responsivo</h3>
+                        <p class="mb-0">Interfaces que se adaptam perfeitamente a qualquer dispositivo.</p>
+                    </div>
+                    </div>
+            
+                    <!-- Serviço 3 -->
+                    <div class="col-md-6 col-lg-4">
+                    <div class="servico-box text-center p-4">
+                        <i class="bi bi-cloud-check icon-servico mb-3"></i>
+                        <h3 class="fs-5 mb-2">Integrações & APIs</h3>
+                        <p class="mb-0">Conectamos seu sistema a APIs externas e plataformas digitais.</p>
+                    </div>
+                    </div>
+            
+                </div>
+                </div>
+            </section>
+            <!-- Seção Portfólio -->
+            <section class="portfolio py-5">
+                <div class="container">
+                    <!-- Título e Subtítulo -->
+                    <div class="text-center mb-5">
+                        <h2 class="section-title">Projetos</h2>
+                        <p class="section-subtitle">Projetos desenvolvidos com foco em design, performance e experiência.</p>
+                    </div>
+                
+                    <div class="row g-4">
+                
+                        <!-- Projeto 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="projeto-card">
+                                <img src="assets/img/produtos/breve.png" alt="Projeto 1" class="img-fluid">
+                                <div class="overlay">
+                                    <h4>Projeto Institucional</h4>
+                                    <p>Site moderno com foco em SEO e performance.</p>
+                                    <a href="#" class="btn-portfolio">Ver Projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Projeto 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="projeto-card">
+                                <img src="assets/img/produtos/breve.png" alt="Projeto 2" class="img-fluid">
+                                <div class="overlay">
+                                    <h4>Loja Virtual</h4>
+                                    <p>E-commerce com carrinho inteligente e integração com API.</p>
+                                    <a href="#" class="btn-portfolio">Ver Projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Projeto 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="projeto-card">
+                                <img src="assets/img/produtos/breve.png" alt="Projeto 3" class="img-fluid">
+                                <div class="overlay">
+                                    <h4>Dashboard Admin</h4>
+                                    <p>Painel com gráficos interativos e gerenciamento dinâmico.</p>
+                                    <a href="#" class="btn-portfolio">Ver Projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Seção "Quem Somos" -->
+            <section id="quem-somos" class="quem-somos py-5">
+                <div class="container">
+            
+                    <!-- Título -->
+                    <div class="text-center mb-5">
+                        <h2 class="titulo-secao">Quem Somos</h2>
+                        <p class="subtitulo-secao">
+                        Conheça os desenvolvedores por trás da <strong class="destaque">HB Developers</strong>.
+                        </p>
+                    </div>
+            
+                    <!-- Cards clicáveis -->
+                    <div class="row justify-content-center g-4">
+                        <!-- Card Bruno -->
+                        <div class="col-md-5">
+                            <div class="card perfil-card" data-bs-toggle="collapse" data-bs-target="#perfilBruno">
+                                <div class="d-flex align-items-center p-3">
+                                    <img src="assets/img/logo/bruno.jpg" class="perfil-foto me-3" alt="Foto de Bruno">
+                                    <div>
+                                        <h5 class="mb-0">Bruno Silva</h5>
+                                        <small class="text">Frontend | DevOps</small>
+                                    </div>
+                                </div>
+                                <div id="perfilBruno" class="collapse">
+                                    <hr class="my-2">
+                                    <div class="px-3 pb-3">
+                                        <!-- Formação -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-mortarboard-fill me-2 icone-about"></i>
+                                            <strong>Formado em Desenvolvimento de Sistemas</strong>
+                                        </p>
+                                
+                                        <!-- Experiência -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-briefcase-fill me-2 icone-about"></i>
+                                            <strong>Front-end Specialist com ênfase em UI/UX</strong>
+                                        </p>
+                                    
+                                        <!-- Descrição profissional -->
+                                        <p>
+                                            Atua há mais de 4 anos desenvolvendo interfaces modernas, responsivas e acessíveis. Focado na experiência do usuário, domina tecnologias como React, Vue, Bootstrap e Tailwind. Entrega soluções visuais que equilibram estética e performance.
+                                        </p>
+                                    
+                                        <!-- Redes sociais -->
+                                        <div class="social-icons mt-3">
+                                            <a href="#" aria-label="GitHub de Bruno"><i class="bi bi-github"></i></a>
+                                            <a href="#" aria-label="LinkedIn de Bruno"><i class="bi bi-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Henrique -->
+                        <div class="col-md-5">
+                            <div class="card perfil-card" data-bs-toggle="collapse" data-bs-target="#perfilHenrique">
+                                <div class="d-flex align-items-center p-3">
+                                    <img src="assets/img/logo/eu.svg" class="perfil-foto me-3" alt="Foto de Henrique">
+                                    <div>
+                                        <h5 class="mb-0">Henrique Cordeiro</h5>
+                                        <small class="text">Backend | DevOps</small>
+                                    </div>
+                                </div>
+                                <div id="perfilHenrique" class="collapse">
+                                    <hr class="my-2">
+                                    <div class="px-3 pb-3">
+                                        <!-- Formação -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-mortarboard-fill me-2 icone-about"></i>
+                                            <strong>Engenharia de Software</strong>
+                                        </p>
+                                
+                                        <!-- Experiência -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-briefcase-fill me-2 icone-about"></i>
+                                            <strong>Especialista em Back-end, APIs e Cloud Architecture</strong>
+                                        </p>
+                                    
+                                        <!-- Descrição profissional -->
+                                        <p>
+                                            Com mais de 5 anos de experiência, desenvolve soluções robustas em APIs RESTful, microsserviços e infraestrutura escalável. Atua com foco em segurança, automação, integração contínua e desempenho. Experiência sólida com Node.js, Docker, AWS e bancos de dados relacionais e NoSQL.
+                                        </p>
+                                    
+                                        <!-- Redes sociais -->
+                                        <div class="social-icons mt-3">
+                                            <a href="#" aria-label="GitHub de Henrique"><i class="bi bi-github"></i></a>
+                                            <a href="#" aria-label="LinkedIn de Henrique"><i class="bi bi-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Início da Seção FAQ - Perguntas Frequentes -->
+            <section id="faq">
+                <div class="container">
+                    <!-- Cabeçalho da seção FAQ -->
+                    <div class="faq-header" data-aos="fade-up">
+                        <h2>Perguntas Frequentes</h2>
+                        <p>Esclareça dúvidas sobre nossa atuação como desenvolvedores.</p>
+                    </div>
+
+                    <!-- Lista de perguntas e respostas -->
+                    <div class="faq-container">
+                        <!-- FAQ 1 -->
+                        <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                            <summary>
+                                💻 Que tipo de sites vocês desenvolvem?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>Trabalhamos com portfólios, landing pages, sites institucionais e sistemas personalizados para empresas de diversos segmentos.</p>
+                        </details>
+
+                        <!-- FAQ 2 -->
+                        <details class="faq-item" data-aos="fade-right" data-aos-delay="200">
+                            <summary>
+                                🛠️ Vocês oferecem suporte após a entrega do projeto?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>Sim. Oferecemos suporte técnico por um período combinado, além de planos de manutenção sob demanda.</p>
+                        </details>
+
+                        <!-- FAQ 3 -->
+                        <details class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                            <summary>
+                                🌐 Posso hospedar o site com vocês?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>Podemos auxiliar na escolha da melhor hospedagem, mas não somos responsáveis por eventuais instabilidades da plataforma contratada, que devem ser tratadas diretamente com o provedor.</p>
+                        </details>
+
+                        <!-- FAQ 4 -->
+                        <details class="faq-item" data-aos="fade-right" data-aos-delay="400">
+                            <summary>
+                                📆 Qual o prazo médio para a entrega de um site?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>O prazo depende da complexidade do projeto. Sites institucionais geralmente levam de 7 a 15 dias úteis.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+            <!-- Fim da Seção FAQ -->
+
+
+  
+
+            
+
+          
+
+
+          
+
+            <!-- Botão flutuante do WhatsApp -->
+            <a 
+                href="https://wa.me/5511999999999" 
+                class="whatsapp-fixo" 
+                target="_blank" 
+                aria-label="Fale conosco pelo WhatsApp"
+            >
+                <img 
+                    src="assets/img/banner/banner.svg" 
+                    alt="WhatsApp" 
+                    width="60" 
+                    height="60"
+                >
+            </a>
+
+        </main>
+
+        <!-- Estilo para botão WhatsApp -->
+        <style>
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        </style>
+
+          
+
+    </body>
+    <!-- Bootstrap JS com Popper.js incluído -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/toogle-fecha.js"></script>
+    <script src="scripts/hero-digita.js"></script>
+    <script src="scripts/frases-loop.js"></script>
+
+   
+</html>

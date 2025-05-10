@@ -1,0 +1,26 @@
+/* Seção geral */
+.frases-slide {
+  background: var(--frase-bg); /* ou transparente se preferir */
+  color: var(--frase-txt);
+}
+
+/* Wrapper com overflow escondido para efeito de slide */
+.frase-wrapper {
+  height: 50px;
+  position: relative;
+}
+
+/* Texto animado */
+.frase-texto {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.5s ease;
+}
+
+/* Classe para mostrar frase animando da direita */
+.frase-ativa {
+  transform: translateX(0);
+  opacity: 1;
+}

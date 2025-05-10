@@ -1,0 +1,109 @@
+
+  /* === PORTFÓLIO === */
+  .portfolio {
+    background-color: var(--portfolio-bg);
+  }
+  
+  /* Card de projeto */
+  .projeto-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .projeto-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+  }
+  
+  .projeto-card:hover img {
+    transform: scale(1.08);
+  }
+  
+  /* Título da seção */
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--portfolio-txt);
+  }
+  
+  /* Subtítulo da seção */
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: var(--portfolio-texto);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Overlay com conteúdo ao passar o mouse */
+  .projeto-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .projeto-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Botão dentro do card */
+  .btn-portfolio {
+    margin-top: 12px;
+    color: var(--portfolio-botao-primario);
+    background-color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-portfolio:hover {
+    background-color: var(--portfolio-destaque);
+    color: #fff;
+  }
+  
+
+
+  /* Foto redonda */
+.dev-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--portfolio-destaque);
+  }
+  
+  /* Card dos devs */
+  .dev-card {
+    background: var(--bg-section);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  /* Ícones sociais */
+  .social-icons a {
+    color: var(--portfolio-destaque);
+    margin: 0 10px;
+    font-size: 1.4rem;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: var(--accent);
+  }
+  

@@ -1,0 +1,130 @@
+/* === HERO - Página inicial === */
+.hero-home {
+  min-height: 90vh;
+  background-image: url('/assets/img/banner/bannerfundo.svg'); /* Substitua pela imagem real */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 60px 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--hero-texto);
+}
+
+/* Overlay escuro */
+.hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Conteúdo acima da imagem/overlay */
+.hero-home .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Destaque visual para a marca */
+.hero-home .marca {
+  color: var(--hero-destaque);
+}
+
+.hero-home .hero-txt {
+ color: var(--hero-txt);
+
+}
+
+.hero-p{
+  color: var(--hero-txt);
+  letter-spacing: 0.8px;
+}
+
+/* Efeito de digitação no título */
+#typewriter {
+  display: inline-block;
+  
+}
+
+/* Cursor piscante */
+#typewriter::after {
+  content: '|';
+  animation: blinkCursor 0.8s infinite;
+  color: var(--hero-destaque); /* Use a cor que preferir */
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+/* === Botões com estilo moderno === */
+.btn-custom {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Botão primário */
+.btn-primary-custom {
+  background-color: var(--hero-botao-primario);
+  color: var(--botao-texto);
+  border: none;
+}
+.btn-primary-custom:hover {
+  background-color: var(--botao-hover);
+}
+
+/* Botão secundário com borda */
+.btn-outline-custom {
+  background-color: var(--hero-botao-secundario);
+  color: var(--hero-texto);
+  border: 2px solid var(--hero-botao-secundario-borda);
+}
+.btn-outline-custom:hover {
+  border-color: var(--botao-hover);
+  color: var(--botao-hover);
+}
+
+/* Animação suave de entrada */
+.hero-home h1,
+.hero-home p,
+.hero-home .btn-custom {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.hero-home h1 { animation-delay: 0.2s; }
+.hero-home p { animation-delay: 0.4s; }
+.hero-home .btn-custom:nth-child(1) { animation-delay: 0.6s; }
+.hero-home .btn-custom:nth-child(2) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Texto responsivo */
+@media (max-width: 576px) {
+  .hero-home h1 {
+    font-size: 2rem;
+  }
+
+  .hero-home p {
+    font-size: 1rem;
+  }
+}

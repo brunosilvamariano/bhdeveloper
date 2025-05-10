@@ -1,0 +1,109 @@
+/* ==============================
+   FAQ - Estilo Minimalista com variáveis
+   ============================== */
+
+
+  
+  .faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .faq-header h2 {
+    font-size: 2.5rem;
+    color: var(--faq-texto);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  
+  .faq-header p {
+    color: var(--faq-texto);
+    font-size: 1rem;
+  }
+  
+  /* Container do FAQ */
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Item do FAQ */
+  .faq-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--faq-destaque);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .faq-item summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--faq-texto);
+  }
+  
+  .faq-item summary .icon {
+    font-size: 24px;
+    color: var(--faq-destaque);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotação ao abrir */
+  .faq-item[open] summary .icon {
+    transform: rotate(45deg);
+  }
+  
+  /* Resposta */
+  .faq-item p {
+    margin-top: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--faq-txt);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item[open] p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Links no FAQ */
+  .faq-item p a {
+    color: var(--faq-botao-primario);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .faq-item p a:hover {
+    text-decoration: underline;
+    color: var(--faq-botao-secundario-borda);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .faq-header h2 {
+      font-size: 1.5rem;
+    }
+  
+    .faq-item summary {
+      font-size: 1rem;
+    }
+  
+    .faq-item p {
+      font-size: 0.95rem;
+    }
+  }
+  

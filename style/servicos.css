@@ -1,0 +1,22 @@
+/* Seção Serviços */
+.servicos {
+    background-color: var(--servico-bg);
+  }
+  
+  /* Caixa de serviço */
+  .servico-box {
+    background-color: var(--servico-botao-secundario);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .servico-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Ícone */
+  .icon-servico {
+    font-size: 2.5rem;
+    color: var(--hero-destaque); /* usa o destaque da paleta */
+  }
+  
