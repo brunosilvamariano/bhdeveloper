@@ -86,6 +86,44 @@
     --faq-botao-secundario:     #e6eae1;
     --faq-botao-secundario-borda: #777777;
 
+      /* === SEÇÃO FAQ === */
+    --tecnologias-bg:                    #2c3e50;
+    --tecnologias-texto:                 #2c3e50;
+    --tecnologias-txt:                 #2c3e50;
+    --tecnologias-destaque:             #3498db;
+    --tecnologias-botao-primario:       #3498db;
+    --tecnologias-botao-secundario:     #e6eae1;
+    --tecnologias-botao-secundario-borda: #777777;
+
+      /* === SEÇÃO PLANOS === */
+    --planos-bg:                    #e6eae1;
+    --planos-texto:                 #2c3e50;
+    --planos-txt:                   #2c3e50;
+    --planos-destaque:             #3498db;
+    --planos-botao-primario:       #3498db;
+    --planos-botao-primario-hover: #2980b9; /* cor escura para hover */
+    --planos-botao-secundario:     #ffffff;
+    --planos-botao-secundario-borda: #777777;
+    --planos-borda:                #ccc;
+    --planos-card-bg:              #ffffff;
+    --planos-beneficio-icone:      #27ae60;
+    --planos-preco:                #e67e22;
+
+     --footer-bg:                    #2c3e50;
+    --footer-texto:                 #e6eae1;
+    --footer-txt:                   #3498db;
+    --footer-destaque:             #3498db;
+    --footer-botao-primario:       #3498db;
+    --footer-botao-primario-hover: #2980b9; /* cor escura para hover */
+    --footer-botao-secundario:     #ffffff;
+    --footer-botao-secundario-borda: #777777;
+    --footer-borda:                #ccc;
+    --footer-card-bg:              #ffffff;
+    --footer-beneficio-icone:      #27ae60;
+    --footer-preco:                #e67e22;
+
+
+
   /* === BOTÃO WHATSAPP FIXO === */
   --whatsapp-bg:               #25d366;
   --whatsapp-icon:             #ffffff;
@@ -95,4 +133,105 @@
 
 body{
   background: var(--cor-fundo-principal);
+}
+
+/* Container do botão do WhatsApp */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px; /* Distância do rodapé */
+    right: 20px;  /* Distância da borda direita */
+    text-align: center;
+    z-index: 1000; /* Garante que o ícone apareça sobre outros elementos */
+}
+
+/* Balão de mensagem acima do ícone */
+.whatsapp-msg {
+    background-color: #25d366; /* Cor verde do WhatsApp */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 80px; /* Distância entre o balão e o ícone */
+    right: 0;
+    white-space: nowrap;
+    opacity: 0; /* Inicialmente invisível */
+    animation: showMsg 3s ease-out forwards;
+}
+
+/* Animação para mostrar a mensagem */
+@keyframes showMsg {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ícone do WhatsApp */
+.whatsapp-fixo img {
+    border-radius: 50%; /* Deixa o ícone redondo */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-fixo img:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+}
+
+
+
+
+
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-texto);
+    padding: 40px 0;
+}
+
+.footer-title {
+    color: var(--footer-txt);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: var(--footer-texto);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--footer-destaque);
+}
+
+.footer-social-icon {
+    color: var(--footer-texto);
+    margin-right: 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-social-icon:hover {
+    color: var(--footer-destaque);
+}
+
+.footer-text {
+    color: var(--footer-texto);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
 }

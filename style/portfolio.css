@@ -26,20 +26,15 @@
   }
   
   /* Título da seção */
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--portfolio-txt);
+  .portfolio .section-title {
+   
+    color: var(--portfolio-texto) ;
   }
-  
-  /* Subtítulo da seção */
-  .section-subtitle {
-    font-size: 1.125rem;
+
+  .portfolio .section-subtitle{
     color: var(--portfolio-texto);
-    max-width: 600px;
-    margin: 0 auto;
   }
-  
+
   /* Overlay com conteúdo ao passar o mouse */
   .projeto-card .overlay {
     position: absolute;

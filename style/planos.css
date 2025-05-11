@@ -1,0 +1,154 @@
+.planos-assinatura {
+    background-color: var(--planos-bg);
+    color: var(--planos-texto);
+}
+
+/* Título e subtítulo da seção */
+.titulo-secao {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--planos-texto);
+}
+
+.subtitulo-secao {
+    font-size: 1.1rem;
+    color: var(--planos-txt);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* === Botão de comparação de planos === */
+.btn-comparar {
+    background-color: var(--planos-botao-primario);
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-comparar:hover {
+    background-color: var(--planos-botao-primario-hover);
+}
+
+/* === Cards dos Planos === */
+.plano-card {
+    background-color: var(--planos-card-bg);
+    border: 1px solid var(--planos-borda);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plano-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plano-card .card-title {
+    font-size: 1.5rem;
+    color: var(--planos-destaque);
+    font-weight: 600;
+}
+
+.plano-card .card-text {
+    font-size: 1rem;
+    color: var(--planos-txt);
+    margin-bottom: 1rem;
+}
+
+/* Preço do plano */
+.preco-plano {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--planos-preco);
+}
+
+/* Lista de benefícios */
+.lista-beneficios li {
+    font-size: 0.95rem;
+    color: var(--planos-txt);
+    margin: 8px 0;
+}
+
+.lista-beneficios i {
+    color: var(--planos-beneficio-icone);
+}
+
+/* === Botão Escolher Plano === */
+.btn-escolher {
+    background-color: var(--planos-botao-primario);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-escolher:hover {
+    background-color: var(--planos-botao-primario-hover);
+}
+
+/* === Botão Ver Detalhes === */
+.btn-detalhes {
+    background-color: var(--planos-botao-secundario);
+    color: var(--planos-texto);
+    border: 1px solid var(--planos-botao-secundario-borda);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-detalhes:hover {
+    background-color: var(--planos-botao-primario);
+    color: #fff;
+    border-color: var(--planos-botao-primario);
+}
+
+/* === Detalhes Expansíveis === */
+.collapse ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.collapse li {
+    font-size: 0.95rem;
+    color: var(--planos-txt);
+}
+
+/* === Tabela Comparativa === */
+.table-responsive {
+    background-color: var(--planos-card-bg);
+    border-radius: 10px;
+    overflow-x: auto;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#comparar-planos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#comparar-planos th,
+#comparar-planos td {
+    padding: 12px 15px;
+    border: 1px solid var(--planos-borda);
+}
+
+#comparar-planos thead th {
+    background-color: var(--planos-destaque);
+    color: #fff;
+    font-weight: 600;
+}
+
+#comparar-planos tbody td {
+    background-color: #fefefe;
+    color: var(--planos-texto);
+}
+
+#comparar-planos h4 {
+    color: var(--planos-texto);
+}

@@ -1,0 +1,40 @@
+/* Estilos gerais para a seção de Tecnologias */
+#tecnologias {
+ 
+  color: var(--tecnologias-texto);
+
+}
+
+/* Cabeçalho */
+#tecnologias h2 {
+  color: var(--tecnologias-destaque);
+}
+
+/* Texto adicional */
+#tecnologias p {
+  color: var(--tecnologias-txt);
+}
+
+/* Ícones */
+#tecnologias .img-fluid {
+  max-height: 60px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#tecnologias .img-fluid:hover {
+  transform: scale(1.1);
+}
+
+/* Botões */
+#tecnologias .btn-primario {
+  background-color: var(--tecnologias-botao-primario);
+  border-color: var(--tecnologias-botao-primario);
+  color: white;
+}
+
+#tecnologias .btn-secundario {
+  background-color: var(--tecnologias-botao-secundario);
+  border: 1px solid var(--tecnologias-botao-secundario-borda);
+  color: var(--tecnologias-texto);
+}
+
