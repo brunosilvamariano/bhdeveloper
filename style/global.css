@@ -135,6 +135,10 @@ body{
   background: var(--cor-fundo-principal);
 }
 
+section {
+  scroll-margin-top: 80px; /* Ajuste para header + respiro */
+}
+
 /* Container do botão do WhatsApp */
 .whatsapp-container {
     position: fixed;
