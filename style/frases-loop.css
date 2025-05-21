@@ -1,26 +1,63 @@
-/* Seção geral */
+/* Estilização da seção */
 .frases-slide {
-  background: var(--frase-bg); /* ou transparente se preferir */
+  background-color: var(--frase-bg);
+  color: var(--frase-texto);
+}
+
+/* Wrapper da frase */
+.frase-wrapper {
+  min-height: 60px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Ícone */
+#icone-frase {
+  color: var(--frase-destaque);
+}
+
+/* Texto com animação */
+#frase-slide {
+  display: inline-block;
+  animation: fraseSlide 1s ease-in-out;
   color: var(--frase-txt);
 }
 
-/* Wrapper com overflow escondido para efeito de slide */
-.frase-wrapper {
-  height: 50px;
-  position: relative;
+/* Animação de transição */
+@keyframes fraseSlide {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Texto animado */
-.frase-texto {
-  display: inline-block;
-  white-space: nowrap;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: transform 0.8s ease, opacity 0.5s ease;
+/* Responsividade */
+@media (max-width: 768px) {
+  .frase-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #icone-frase {
+    margin-right: 0 !important;
+    margin-bottom: 8px;
+  }
 }
 
-/* Classe para mostrar frase animando da direita */
-.frase-ativa {
-  transform: translateX(0);
-  opacity: 1;
+@media (max-width: 425px) {
+  #frase-slide {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 375px) {
+  #frase-slide {
+    font-size: 0.9rem;
+  }
 }
