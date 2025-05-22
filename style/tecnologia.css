@@ -1,40 +1,44 @@
-/* Estilos gerais para a seção de Tecnologias */
+:root {
+  /* === SEÇÃO FAQ === */
+  --tecnologias-bg:                    #2c3e50;
+  --tecnologias-texto:                 #2c3e50;
+  --tecnologias-txt:                   #2c3e50;
+  --tecnologias-destaque:             #3498db;
+  --tecnologias-botao-primario:       #3498db;
+  --tecnologias-botao-secundario:     #e6eae1;
+  --tecnologias-botao-secundario-borda: #777777;
+}
+
 #tecnologias {
- 
-  color: var(--tecnologias-texto);
-
-}
-
-/* Cabeçalho */
-#tecnologias h2 {
-  color: var(--tecnologias-destaque);
-}
-
-/* Texto adicional */
-#tecnologias p {
-  color: var(--tecnologias-txt);
-}
-
-/* Ícones */
-#tecnologias .img-fluid {
-  max-height: 60px;
-  transition: transform 0.3s ease-in-out;
-}
-
-#tecnologias .img-fluid:hover {
-  transform: scale(1.1);
-}
-
-/* Botões */
-#tecnologias .btn-primario {
-  background-color: var(--tecnologias-botao-primario);
-  border-color: var(--tecnologias-botao-primario);
-  color: white;
-}
-
-#tecnologias .btn-secundario {
   background-color: var(--tecnologias-botao-secundario);
-  border: 1px solid var(--tecnologias-botao-secundario-borda);
+}
+
+#tecnologias .text-custom {
   color: var(--tecnologias-texto);
 }
 
+/* Estilo base das caixas */
+.tech-box {
+  background-color: #fff;
+  border: 2px solid var(--tecnologias-destaque);
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: bold;
+  color: var(--tecnologias-texto);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Destaque especial (Desenvolvimento Web) */
+.tech-box.destaque {
+  background-color: var(--tecnologias-destaque);
+  color: #fff;
+}
+
+/* Efeito ao passar o mouse */
+.tech-box:hover {
+  background-color: var(--tecnologias-destaque);
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
